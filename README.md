@@ -1,2 +1,2 @@
 # hubitat-ModernForms
-hubitat code
+First attempt on writing a device driver for hubitat. In this case for the Modern Form Fans
