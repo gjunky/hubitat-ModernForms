@@ -5,8 +5,10 @@
 * 
  */
 metadata {
-    definition(name: "Simple Form Fan", namespace: "RobJ", author: "RobJodh@gmail.com") {
+    definition(name: "Simple Form Fan", namespace: "gjunky", author: "RobJodh@gmail.com") {
         capability "FanControl"
+        command "FanOn"
+        command "FanOff"
         command "GetStatus"
     }
 }
@@ -36,9 +38,7 @@ def getSpeedValue(speed) {
 
 def sendCommand(command, commandValue) {
     if (logEnable)  log.debug("------- in sendCommand --------")
-    log.info("Fan IP :" + fanIP)
-    log.info("command: $command")
-    log.info("commandValue: $commandValue")
+    log.info("Fan IP : $fanIP, command: $command, commandValue: $commandValue")
 
 def params = [
 		uri: "http://" + fanIP,
@@ -88,13 +88,13 @@ def parse(description) {
 }
 */
 
-def on() {
+def FanOn() {
                if (logEnable) log.debug "Sending On Command " + speed
 
                sendCommand("fanOn", true)
 }
 
-def off() {
+def FanOff() {
                if (logEnable) log.debug "Sending Off Command " + speed
 
                sendCommand("fanOn", false)
