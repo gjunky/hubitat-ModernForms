@@ -7,8 +7,8 @@
 metadata {
     definition(name: "Simple Form Fan", namespace: "gjunky", author: "RobJodh@gmail.com") {
         capability "FanControl"
-        command "FanOn"
-        command "FanOff"
+//        command "FanOn"
+//        command "FanOff"
         command "GetStatus"
     }
 }
@@ -31,7 +31,6 @@ def getSpeedValue(speed) {
     else if (speed == "medium") return 3
     else if (speed == "medium-high") return 4
     else if (speed == "high") return 5
-    else if (speed == "on") return 0
     else return -1
 }
     
@@ -68,26 +67,6 @@ def params = [
 }
 
 /*
-def parse(description) {
-    if (logEnable) log.debug("parse - Description: $description")
-
-    def msg = parseLanMessage(description)
-
-    def headersAsString = msg.header // => headers as a string
-    def headerMap = msg.headers      // => headers as a Map
-    def body = msg.body              // => request body as a string
-    def status = msg.status          // => http status code of the response
-    def json = msg.json              // => any JSON included in response body, as a data structure of lists and maps
-    def xml = msg.xml                // => any XML included in response body, as a document tree structure
-    def data = msg.data              // => either JSON or XML in response body (whichever is specified by content-type header in response)
-
-    if (logEnable) {
-                              log.debug("Return Status : " + status)
-                              log.debug("Return Payload:" + json)
-               }
-}
-*/
-
 def FanOn() {
                if (logEnable) log.debug "Sending On Command " + speed
 
@@ -99,11 +78,14 @@ def FanOff() {
 
                sendCommand("fanOn", false)
 }
+*/
 
 def setSpeed(speed) {
                if (logEnable) log.debug "Sending Speed Command " + speed
                def speedInt = getSpeedValue(speed)
                if (speedInt > 0) sendCommand("fanSpeed", speedInt)
+               else if (speed == "on") sendCommand("fanOn", true)
+               else if (speed == "off") sendCommand("fanOn", false)
 }
 
 def showStatus(retData) {
