@@ -5,7 +5,7 @@
 * 
  */
 metadata {
-    definition(name: "Simple Form Fan", namespace: "RobJodh", author: "RobJodh@gmail.com") {
+    definition(name: "Simple Form Fan", namespace: "RobJodH", author: "RobJodh@gmail.com") {
         capability "FanControl"
         capability "Bulb"
         command "GetStatus"
@@ -44,7 +44,7 @@ def sendCommand(command, commandValue) {
     }
 
     def params = [
-		uri: "http://192.168.20.127",
+		uri: "http://" + fanIP,
 		path: "/mf",
 		contentType: "application/json",
 		headers: ['something' : 'abc'],
