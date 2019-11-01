@@ -5,9 +5,8 @@
 * 
  */
 metadata {
-    definition(name: "Simple Form Fan", namespace: "RobJodH", author: "RobJodh@gmail.com") {
+    definition(name: "Simple Form Fan", namespace: "RobJ", author: "RobJodh@gmail.com") {
         capability "FanControl"
-        capability "Bulb"
         command "GetStatus"
     }
 }
@@ -36,14 +35,12 @@ def getSpeedValue(speed) {
     
 
 def sendCommand(command, commandValue) {
-    if (logEnable) {
-            log.debug("------- in sendCommand --------")
-            log.debug("Fan IP :" + fanIP)
-            log.debug("command: $command")
-            log.debug("commandValue: $commandValue")
-    }
+    if (logEnable)  log.debug("------- in sendCommand --------")
+    log.info("Fan IP :" + fanIP)
+    log.info("command: $command")
+    log.info("commandValue: $commandValue")
 
-    def params = [
+def params = [
 		uri: "http://" + fanIP,
 		path: "/mf",
 		contentType: "application/json",
@@ -125,3 +122,4 @@ def GetStatus() {
     if (logEnable) log.debug("Querying Fan")
     showStatus(sendCommand("queryDynamicShadowData", 1))
 }
+
