@@ -4,6 +4,8 @@ First attempt on writing a device driver for hubitat. In this case for the Moder
 Note: Setting the speed will not change the on/off of the Fan. You need to set the Speed to "on" to turn it on. This allows you to change the speed without affecting the state of the fan
 
 To Install:
+You will need to install them in the Modern Forms app first as this will alow you to pair the fan with your WiFi network. This is cloud based but once that is done, further control through this driver will be local.
+
 <ul>
   <li>In Hubtat --> Driver Code - New Driver</li>
   <li>Copy/Paste the ModernFormsFan.groovy content (RAW format)</li>
