@@ -4,6 +4,7 @@
 * Allows basic control of the Fan part of Simple Form Fans
 * 
 *    Versions: 1.0    Initial version with most capabilities included
+*              1.01   Fixed a bug in the sleep timer reporting 
  */
 metadata {
     definition(name: "Simple Form Fan", namespace: "gjunky", author: "RobJodh@gmail.com") {
@@ -148,11 +149,11 @@ def showStatus(retData) {
         if (retData.lightOn) device.sendEvent(name: "light", value: "On")
         else device.sendEvent(name: "light", value: "Off")
         device.sendEvent(name: "lightBrightness", value: retData.lightBrightness)
-        if (retData.fanSleepTimer) {
+        if (retData.fanSleepTimer != 0) {
             sleepUntil = new Date((retData.fanSleepTimer as long)*1000).format( 'M-d-yyyy HH:mm-ss' )
             device.sendEvent(name: "fanSleepTimer", value: sleepUntil)
         }
-        if (retData.fanSleepTimer) {
+        if (retData.lightSleepTimer) {
             sleepUntil = new Date((retData.lightSleepTimer as long)*1000).format( 'M-d-yyyy HH:mm-ss' )
             device.sendEvent(name: "lightSleepTimer", value: retData.lightSleepTimer)
         }
