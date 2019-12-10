@@ -5,6 +5,7 @@
 * 
 *    Versions: 1.0    Initial version with most capabilities included
 *              1.01   Fixed a bug in the sleep timer reporting 
+*              1.02   2019-12-10 - Removed extra speed reporting for on/off command
  */
 metadata {
     definition(name: "Simple Form Fan", namespace: "gjunky", author: "RobJodh@gmail.com") {
@@ -76,26 +77,22 @@ def params = [
  */
 
 def FanOn() {
-    if (logEnable) log.debug "Sending Fan On Command " + speed
-
+    if (logEnable) log.debug "Sending Fan On Command "
     sendCommand("fanOn", true)
 }
 
 def FanOff() {
-    if (logEnable) log.debug "Sending Fan Off Command " + speed
-
+    if (logEnable) log.debug "Sending Fan Off Command "
     sendCommand("fanOn", false)
 }
 
 def LightOn() {
-    if (logEnable) log.debug "Sending Light On Command " + speed
-
+    if (logEnable) log.debug "Sending Light On Command "
     sendCommand("lightOn", true)
 }
 
 def LightOff() {
-    if (logEnable) log.debug "Sending Light Off Command " + speed
-
+    if (logEnable) log.debug "Sending Light Off Command "
     sendCommand("lightOn", false)
 }
 
