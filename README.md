@@ -14,7 +14,7 @@ You will need to install them in the Modern Forms app first as this will alow yo
   <li>Enter a Device Name (ie: Living Room Fan). This needs to be unique</li>
   <li>Select the Type --> (under user) Simple Forms Fan</li>
 </ul>
-You now have a new device. In the device settings, enter the IP address of the fan as xxx.xxx.xxx.xxx. You can probably find this in your routers device list. Mine show up with a device name of MXCHIP
+You now have a new device. In the device settings, enter the IP address of the fan as xxx.xxx.xxx.xxx. You can probably find this in your routers device list. Mine show up with a device name of MXCHIP. If you have the fans registered in the Modern Forms App, you can find the IP there as well under the fans properties.
 
 Repeat the virtual device steps above for any additional fans
 
