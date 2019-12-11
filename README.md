@@ -16,6 +16,8 @@ You will need to install them in the Modern Forms app first as this will alow yo
 </ul>
 You now have a new device. In the device settings, enter the IP address of the fan as xxx.xxx.xxx.xxx. You can probably find this in your routers device list. Mine show up with a device name of MXCHIP. If you have the fans registered in the Modern Forms App, you can find the IP there as well under the fans properties.
 
+<b>Update 2019-12-11:</b> I added two separate devices in case you just want the Fan or just the Light. This might make it possible to integrate it into Google Home (not tested yet). Both work as a dimmer with a level from 0-100 (0 turns the fan off but leaves the prior speed setting). For the fan speed, the entered number is equally divided by 6 (the max fan speed)
+
 Repeat the virtual device steps above for any additional fans
 
 Please let me know how this works for you.
