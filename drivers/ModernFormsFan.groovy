@@ -8,7 +8,7 @@
 *              1.02   2019-12-10 - Removed extra speed reporting for on/off command
  */
 metadata {
-    definition(name: "Simple Form Fan", namespace: "gjunky", author: "RobJodh@gmail.com") {
+    definition(name: "Modern Form Fan", namespace: "gjunky", author: "RobJodh@gmail.com") {
         capability "FanControl"
         capability "SwitchLevel"
         command "GetStatus"
