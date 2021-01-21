@@ -151,9 +151,9 @@ def showStatus(retData) {
             sleepUntil = new Date((retData.fanTimer as long)*1000).format( 'M-d-yyyy HH:mm-ss' )
             device.sendEvent(name: "fanTimer", value: sleepUntil)
         }
-        if (retData.lightSleepTimer) {
-            sleepUntil = new Date((retData.lightSleepTimer as long)*1000).format( 'M-d-yyyy HH:mm-ss' )
-            device.sendEvent(name: "lightSleepTimer", value: retData.lightSleepTimer)
+        if (retData.lightTimer) {
+            sleepUntil = new Date((retData.lightTimer as long)*1000).format( 'M-d-yyyy HH:mm-ss' )
+            device.sendEvent(name: "lightTimer", value: retData.lightTimer)
         }
     }
 }
